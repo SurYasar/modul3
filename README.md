@@ -476,10 +476,6 @@ services:
 
 ---
 
-<br>
-
----
-
 ## Output `ayamgoreng.c`
 1. `./ayamgoreng`
 ![./ayamgoreng](/task-1/output/ayamgoreng.png)
