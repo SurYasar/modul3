@@ -1,5 +1,6 @@
+<div align=center>
+    
 # Laporan Resmi Praktikum Sistem Operasi Modul 3 Kelompok B27
-<br>
 
 ## Anggota Kelompok:
 
@@ -9,7 +10,7 @@
 | 5025231114 | Muhammad Surya Yasar |
 | 5025231254 | Ahmad Muqorrobin |
 
-<br>
+</div>
 
 # Soal 1
 ## Langkah Pengerjaan
