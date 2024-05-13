@@ -100,6 +100,7 @@ HeroScore calculate_best_hero(const char* role, Identity identities[], int id_co
     	download_and_extract();
     }
 ```
+---
 
 <br>
 
@@ -352,6 +353,10 @@ int isDirectoryExists(const char *path) {
 
 <br>
 
+---
+
+<br>
+
 ## 2. Buat Dockerfile yang berisi semua langkah yang diperlukan untuk setup environment dan menentukan bagaimana aplikasi harus dijalankan
 
 ```dockerfile
@@ -404,5 +409,58 @@ CMD ["./ayamgoreng"]:
 ```
 
 - Menetapkan perintah yang akan dijalankan saat container berjalan. Dalam hal ini, perintah yang ditetapkan adalah `./ayamgoreng`, yang akan menjalankan program ayamgoreng yang telah dikompilasi sebelumnya.
+
+---
+
+<br>
+
+## 3. Setelah membuat Dockerfile, kita perlu membuat Docker Image dan mem-publishnya ke Docker Hub
+
+```bash
+docker build -t suryasar/joki-ml-bang .
+docker login
+docker push suryasar/joki-ml-bang
+```
+
+<br>
+
+---
+
+<br>
+
+## 4. Terakhir, gunakan docker compose untuk melakukan scaling
+
+```yml
+version: '3'
+
+services:
+ tank-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "TANK"]
+
+ assassin-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "ASSASSIN"]
+
+ fighter-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "FIGHTER"]
+
+ marksman-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "MM"]
+
+ mage-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "MAGE"]
+
+ support-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "SUPPORT"]
+```
+
+<br>
+
+---
 
 <br>
