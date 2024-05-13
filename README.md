@@ -128,4 +128,50 @@ void download_and_extract() {
 
 <br>
 
-### d. 
+### d. Deklarasi variabel, membaca data, lalu menentukan hero terbaik
+
+<br>
+
+Deklarasi variabel:
+```c
+Identity identities[MAX_HERO_COUNT];
+Attributes attributes[MAX_HERO_COUNT];
+HeroScore best_hero;
+const char* roles[] = {"TANK", "ASSASSIN", "FIGHTER", "MM", "MAGE", "SUPPORT"};
+int role_count = sizeof(roles) / sizeof(roles[0]);
+```
+
+- `identities[MAX_HERO_COUNT]` dan `attributes[MAX_HERO_COUNT]`: Array yang menyimpan data identitas dan atribut hero, dengan ukuran maksimum yang ditentukan oleh `MAX_HERO_COUNT`, yaitu 112.
+- `best_hero`: Variabel untuk menyimpan hero terbaik yang akan ditentukan.
+- `roles[]`: Array yang berisi daftar role hero yang akan dianalisis.
+- `role_count`: Jumlah role yang ada dalam array `roles[]`.
+
+<br>
+
+Membaca data:
+```c
+int id_count = read_identities("Data Mobile Legend/identitas.csv", identities);
+int att_count = read_attributes("Data Mobile Legend/Atribut/atribut-hero.csv", attributes);
+```
+- `id_count`: Jumlah identitas hero yang berhasil dibaca dari file CSV "Data Mobile Legend/identitas.csv".
+- `att_count`: Jumlah atribut hero yang berhasil dibaca dari file CSV "Data Mobile Legend/Atribut/atribut-hero.csv".
+
+<br>
+
+```c
+if (argc > 1) {
+    best_hero = calculate_best_hero(argv[1], identities, id_count, attributes, att_count);
+    printf("The best %s is %s with skillpoints %.2f\n", argv[1], best_hero.name, best_hero.skillpoints);
+} else {
+    for (int i = 0; i < role_count; i++) {
+        best_hero = calculate_best_hero(roles[i], identities, id_count, attributes, att_count);
+        printf("The best %s is %s with skillpoints %.2f\n", roles[i], best_hero.name, best_hero.skillpoints);
+    }
+}
+```
+- Jika terdapat argumen command-line (argv) lebih dari satu, maka program akan mencari hero terbaik untuk peran yang diberikan sebagai argumen.
+- Jika tidak ada argumen, program akan mencari hero terbaik untuk setiap peran yang ada dalam array `roles[]`.
+- Untuk setiap peran, fungsi `calculate_best_hero()` dipanggil dengan peran tersebut sebagai argumen. Hasilnya disimpan dalam `best_hero` dan dicetak di layar bersama dengan peran yang sedang dianalisis dan jumlah skill points yang dimiliki hero terbaik.
+
+<br>
+
