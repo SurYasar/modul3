@@ -1,12 +1,16 @@
 # Laporan Resmi Praktikum Sistem Operasi Modul 3 Kelompok B27
 <br>
+
 ## Anggota Kelompok:
+
 |    NRP     |      Name      |
 | :--------: | :------------: |
 | 5025231226 | Arya Kusuma Dewa |
 | 5025231114 | Muhammad Surya Yasar |
 | 5025231254 | Ahmad Muqorrobin |
+
 <br>
+
 # Soal 1
 ## Langkah Pengerjaan
 
