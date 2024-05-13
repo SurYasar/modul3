@@ -352,4 +352,57 @@ int isDirectoryExists(const char *path) {
 
 <br>
 
-## 2. Buat program Dockerfile
+## 2. Buat Dockerfile yang berisi semua langkah yang diperlukan untuk setup environment dan menentukan bagaimana aplikasi harus dijalankan
+
+```dockerfile
+FROM ubuntu:20.04:
+```
+
+- Mendefinisikan base image yang akan digunakan sebagai dasar untuk membangun image baru. Dalam hal ini, base image yang digunakan adalah Ubuntu 20.04.
+
+<br>
+
+```dockerfile
+RUN apt-get update && \ ...:
+```
+
+- Melakukan pembaruan daftar paket pada sistem operasi menggunakan perintah `apt-get update`.
+- Menggunakan perintah `apt-get install` untuk menginstal beberapa paket yang diperlukan:
+* `python3-pip`: Paket untuk menginstal pip (Python package manager) versi 3.
+* `unzip`: Paket untuk mengekstrak file-file yang di-zip.
+- Menggunakan `pip3 install` untuk menginstal package `kaggle` menggunakan pip versi 3.
+-Tanda `\` digunakan untuk melanjutkan perintah ke baris berikutnya agar lebih mudah dibaca.
+
+<br>
+
+```dockerfile
+WORKDIR /joki-ml-bang:
+```
+
+- Mengatur direktori kerja di dalam container ke `/joki-ml-bang`. Artinya, semua perintah selanjutnya akan dieksekusi di dalam direktori tersebut.
+
+<br>
+
+```dockerfile
+COPY ayamgoreng.c .:
+```
+
+- Menyalin file `ayamgoreng.c` dari direktori lokal ke dalam direktori kerja di dalam container. Tanda `.` menunjukkan direktori kerja saat ini, yaitu `/joki-ml-bang`.
+
+<br>
+
+```dockerfile
+RUN gcc ayamgoreng.c -o ayamgoreng:
+```
+
+- Mengkompilasi file `ayamgoreng.c` menjadi sebuah program eksekusi dengan nama `ayamgoreng`.
+
+<br>
+
+```dockerfile
+CMD ["./ayamgoreng"]:
+```
+
+- Menetapkan perintah yang akan dijalankan saat container berjalan. Dalam hal ini, perintah yang ditetapkan adalah `./ayamgoreng`, yang akan menjalankan program ayamgoreng yang telah dikompilasi sebelumnya.
+
+<br>
