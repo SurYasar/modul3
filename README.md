@@ -458,6 +458,17 @@ services:
   image: suryasar/joki-ml-bang
   command: ["./ayamgoreng", "SUPPORT"]
 ```
+1. `version: '3':`
+- Mendefinisikan versi dari Docker Compose yang digunakan. Pada kasus ini, menggunakan versi 3.
+
+2. `services:`
+- Blok ini berisi definisi dari layanan-layanan yang akan dijalankan sebagai container.
+
+
+3. `tank-instance`, `assassin-instance`, `fighter-instance`, `marksman-instance`, `mage-instance`, `support-instance`:
+- Setiap layanan (service) memiliki nama yang berbeda dan masing-masing mendefinisikan konfigurasi untuk menjalankan sebuah container.
+- `image`: Mendefinisikan nama image Docker yang akan digunakan untuk membangun container. Di sini, menggunakan image dengan nama `suryasar/joki-ml-bang`.
+- `command`: Mendefinisikan perintah yang akan dijalankan saat container berjalan. Dalam hal ini, perintah yang ditetapkan adalah `./ayamgoreng` diikuti dengan argumen role yang akan diproses oleh program tersebut (misalnya: "TANK", "ASSASSIN", dst).
 
 <br>
 
