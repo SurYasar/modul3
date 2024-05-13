@@ -15,11 +15,7 @@
 # Soal 1
 ## Langkah Pengerjaan
 
-<br>
-
 ### a. Membuat struktur data yang diperlukan yaitu Identity, Attributes, dan HeroScore
-
-<br>
 
 ```c
 typedef struct {
@@ -47,21 +43,17 @@ typedef struct {
     float skillpoints;
 } HeroScore;
 ```
-<br>
 
 - Struct `Identity` digunakan untuk menyimpan nama, role, tipe, dan tahun rilis masing-masing hero yang diambil dari file `identitas.csv`
-<br>
+
 - Struct `Attributes` digunakan untuk menyimpan stat masing-masing hero yang diambil dari file `atribut-hero.csv`
-<br>
+
 - Struct `HeroScore` digunakan untuk menyimpan skillpoint masing-masing hero
-<br>
 
 ---
-<br>
 
 ### b. Buat prototipe fungsi supaya kode terlihat lebih rapi
 
-<br>
 
 ```c
 void download_and_extract();
@@ -71,15 +63,11 @@ int read_attributes(const char* filename, Attributes attributes[]);
 HeroScore calculate_best_hero(const char* role, Identity identities[], int id_count, Attributes attributes[], int att_count);
 ```
 
-<br>
-
 ---
 
-<br>
 
 ### c. Panggil fungsi `download_and_extract()` apabila directory "Data Mobile Legend" belum ada, jikas sudah ada lanjutkan program
 
-<br>
 
 ```c
     if(isDirectoryExists("Data Mobile Legend")){
@@ -89,7 +77,6 @@ HeroScore calculate_best_hero(const char* role, Identity identities[], int id_co
     	download_and_extract();
     }
 ```
-<br>
 
 - Untuk mengecek apakah folder "Data Mobile Legend" sudah ada di directory saat ini, gunakan fungsi `isDirectoryExists` yang berisi:
 
@@ -103,7 +90,6 @@ int isDirectoryExists(const char *path) {
     return 0;
 }
 ```
-<br>
 
 - Jika sudah ada, maka panggil fungsi `download_and_extract` yang berisi:
 
@@ -113,6 +99,5 @@ void download_and_extract() {
     system("unzip -o mobilelegend.zip");
 }
 ```
-<br>
 
 ### d. 
