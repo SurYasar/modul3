@@ -156,7 +156,7 @@ if (argc > 1) {
 
 <br>
 
-1. `void download_and_extract()`
+#### 1. `void download_and_extract()`
 Fungsi download_and_extract() adalah sebuah fungsi yang bertugas untuk mengunduh dan mengekstrak dataset dari platform Kaggle.
 
 ```c
@@ -173,7 +173,7 @@ void download_and_extract() {
 
 <br>
 
-2. `int read_identities()`
+#### 2. `int read_identities()`
 Fungsi read_identities bertugas untuk membaca data hero identities dari sebuah file CSV.
 
 ```c
@@ -208,7 +208,7 @@ int read_identities(const char* filename, Identity identities[]) {
 
 <br>
 
-3. `int read_attributes()`
+#### 3. `int read_attributes()`
 Fungsi read_attributes bertugas untuk membaca data atribut hero dari sebuah file CSV.
 
 ```c
@@ -242,10 +242,10 @@ int read_attributes(const char* filename, Attributes attributes[]) {
 
 <br>
 
-4. `HeroScore calculate_best_hero()`
+#### 4. `HeroScore calculate_best_hero()`
 Fungsi calculate_best_hero digunakan untuk mencari hero terbaik berdasarkan peran (role) yang ditentukan.
 
-#### 1. Inisialisasi variabel
+1. Inisialisasi variabel
 ```c
 HeroScore best_hero = {"", 0.0};
 float max_score = -1.0;
@@ -257,7 +257,7 @@ float score;
 
 <br>
 
-#### 2. Perulangan untuk Mengevaluasi Setiap Hero
+2. Perulangan untuk Mengevaluasi Setiap Hero
 ```c
 for (int i = 0; i < att_count; i++) {
 ```
@@ -265,7 +265,7 @@ for (int i = 0; i < att_count; i++) {
 
 <br>
 
-#### 3. Pemilihan Hero Berdasarkan Role
+3. Pemilihan Hero Berdasarkan Role
 ```c
 if (strcmp(identities[i].role, role) == 0) {
 ```
@@ -273,7 +273,7 @@ if (strcmp(identities[i].role, role) == 0) {
 
 <br>
 
-#### 4. Perhitungan Skor Hero
+4. Perhitungan Skor Hero
 ```c
             if (strcmp(role, "TANK") == 0) {
                 score = attributes[i].hp;
@@ -302,7 +302,7 @@ if (strcmp(identities[i].role, role) == 0) {
 
 <br>
 
-#### 5. Penyimpanan Hero Terbaik
+5. Penyimpanan Hero Terbaik
 ```c
 if (score > max_score) {
     max_score = score;
@@ -316,7 +316,7 @@ if (score > max_score) {
 
 <br>
 
-#### 6. Pengembalian Hero Terbaik
+6. Pengembalian Hero Terbaik
 ```c
     return best_hero;
 ```
