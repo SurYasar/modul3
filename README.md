@@ -20,9 +20,8 @@ Pada task ini, terdapat 3 file yang harus dibuat, yaitu `ayamgoreng.c` sebagai p
 
 <br>
 
-Pertama, buat program utama `ayamgoreng.c` sesuai dengan ketentuan pada soal.
+## 1. Buat program utama `ayamgoreng.c` sesuai dengan ketentuan pada soal.
 
-<br>
 
 ### a. Membuat struktur data yang diperlukan yaitu Identity, Attributes, dan HeroScore
 
@@ -154,10 +153,12 @@ if (argc > 1) {
 
 ### e. Buat fungsi secara lengkap di bawah main
 
-<br>
+---
 
 #### 1. `void download_and_extract()`
 Fungsi download_and_extract() adalah sebuah fungsi yang bertugas untuk mengunduh dan mengekstrak dataset dari platform Kaggle.
+
+<br>
 
 ```c
 void download_and_extract() {
@@ -324,7 +325,11 @@ if (score > max_score) {
 
 <br>
 
-5. `int isDirectoryExists()`
+---
+
+<br>
+
+#### 5. `int isDirectoryExists()`
 
 ```c
 int isDirectoryExists(const char *path) {
@@ -336,5 +341,15 @@ int isDirectoryExists(const char *path) {
     return 0;
 }
 ```
+- Struktur `stat` digunakan untuk menyimpan informasi tentang file atau direktori.
+- Variabel `stats` digunakan untuk menyimpan informasi statistik tentang file atau direktori yang diperiksa.
+- Fungsi `stat` digunakan untuk mendapatkan informasi statistik tentang file atau direktori yang ditentukan oleh `path`.
+- `path` adalah parameter yang berisi path lengkap dari direktori yang ingin diperiksa.
+- Informasi statistik akan disimpan ke dalam variabel `stats`.
+- Fungsi `S_ISDIR` digunakan untuk memeriksa apakah jenis file yang diperiksa adalah sebuah direktori.
+- Jika `stats.st_mode` menunjukkan bahwa file yang diperiksa adalah sebuah direktori, maka fungsi akan mengembalikan nilai `1`, menandakan bahwa direktori tersebut ada.
+- Jika jenis file yang diperiksa bukan sebuah direktori, maka fungsi akan mengembalikan nilai `0`, menandakan bahwa direktori tersebut tidak ada.
 
 <br>
+
+## 2. Buat program Dockerfile
