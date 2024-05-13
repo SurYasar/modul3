@@ -2,7 +2,6 @@
     
 # Laporan Resmi Praktikum Sistem Operasi Modul 3 Kelompok B27
 
-## Anggota Kelompok:
 
 |    NRP     |      Name      |
 | :--------: | :------------: |
@@ -13,9 +12,21 @@
 </div>
 
 # Soal 1
+Pada task ini, terdapat 3 file yang harus dibuat, yaitu `ayamgoreng.c` sebagai program utama, `Dockerfile` untuk docker, dan `docker-compose.yml`.
+
+<br>
+
 ## Langkah Pengerjaan
 
+<br>
+
+Pertama, buat program utama `ayamgoreng.c` sesuai dengan ketentuan pada soal.
+
+<br>
+
 ### a. Membuat struktur data yang diperlukan yaitu Identity, Attributes, dan HeroScore
+
+<br>
 
 ```c
 typedef struct {
@@ -24,7 +35,13 @@ typedef struct {
     char tipe[50];
     int tahun_rilis;
 } Identity;
+```
 
+- Struct `Identity` digunakan untuk menyimpan nama, role, tipe, dan tahun rilis masing-masing hero yang diambil dari file `identitas.csv`
+
+<br>
+
+```c
 typedef struct {
     char name[50];
     int hp;
@@ -37,18 +54,22 @@ typedef struct {
     int mana_regen;
     int magic_power;
 } Attributes;
+```
 
+- Struct `Attributes` digunakan untuk menyimpan stat masing-masing hero yang diambil dari file `atribut-hero.csv`
+
+<br>
+
+```c
 typedef struct {
     char name[50];
     float skillpoints;
 } HeroScore;
 ```
 
-- Struct `Identity` digunakan untuk menyimpan nama, role, tipe, dan tahun rilis masing-masing hero yang diambil dari file `identitas.csv`
-
-- Struct `Attributes` digunakan untuk menyimpan stat masing-masing hero yang diambil dari file `atribut-hero.csv`
-
 - Struct `HeroScore` digunakan untuk menyimpan skillpoint masing-masing hero
+
+<br>
 
 ---
 
@@ -63,11 +84,14 @@ int read_attributes(const char* filename, Attributes attributes[]);
 HeroScore calculate_best_hero(const char* role, Identity identities[], int id_count, Attributes attributes[], int att_count);
 ```
 
+<br>
+
 ---
 
 
 ### c. Panggil fungsi `download_and_extract()` apabila directory "Data Mobile Legend" belum ada, jikas sudah ada lanjutkan program
 
+<br>
 
 ```c
     if(isDirectoryExists("Data Mobile Legend")){
@@ -91,6 +115,8 @@ int isDirectoryExists(const char *path) {
 }
 ```
 
+<br>
+
 - Jika sudah ada, maka panggil fungsi `download_and_extract` yang berisi:
 
 ```c
@@ -99,5 +125,7 @@ void download_and_extract() {
     system("unzip -o mobilelegend.zip");
 }
 ```
+
+<br>
 
 ### d. 
