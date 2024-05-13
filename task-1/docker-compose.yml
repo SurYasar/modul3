@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+ tank-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "TANK"]
+
+ assassin-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "ASSASSIN"]
+
+ fighter-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "FIGHTER"]
+
+ marksman-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "MM"]
+
+ mage-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "MAGE"]
+
+ support-instance:
+  image: suryasar/joki-ml-bang
+  command: ["./ayamgoreng", "SUPPORT"]
