@@ -421,8 +421,8 @@ docker build -t suryasar/joki-ml-bang .
 docker login
 docker push suryasar/joki-ml-bang
 ```
-![docker build, push](/task-1/output/dockerbuild.png)
-![docker hub](/task-1/output/dockerhub.png)
+> ![docker build, push](/task-1/output/dockerbuild.png)
+> ![docker hub](/task-1/output/dockerhub.png)
 
 <br>
 
@@ -478,15 +478,15 @@ services:
 
 ## Output `ayamgoreng.c`
 1. `./ayamgoreng`
-![./ayamgoreng](/task-1/output/ayamgoreng.png)
+> ![./ayamgoreng](/task-1/output/ayamgoreng.png)
 
 <br>
 
 2. `./ayamgoreng` setelah folder ada
-![./ayamgoreng exist](/task-1/output/ayamgoreng[exist].png)
+> ![./ayamgoreng exist](/task-1/output/ayamgoreng[exist].png)
 
 <br>
 
 3. `./ayamgoreng MM`
 
-![./ayamgoreng MM](/task-1/output/ayamgorengmm.png)
+> ![./ayamgoreng MM](/task-1/output/ayamgorengmm.png)
